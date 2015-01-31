@@ -22,10 +22,9 @@
   <name>jchat</name>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <tomee.version>1.7.0</tomee.version>
+    <tomee.version>1.7.1</tomee.version>
     <tomcat.version>7.0.55</tomcat.version>
-    <openejb.version>4.7.0</openejb.version>
-
+    <openejb.version>4.7.1</openejb.version>
     <javaee.api>6.0-5</javaee.api>
     <groovy.version>2.1.9</groovy.version>
     <jslint.version>2.0.5</jslint.version>
@@ -57,20 +56,6 @@
       </plugin>
     </plugins>
   </reporting>
-  <repositories>
-    <repository>
-      <id>sonatype.oss.releases</id>
-      <name>Sonatype OSS Releases Repository</name>
-      <url>https://oss.sonatype.org/content/repositories/releases</url>
-    </repository>
-  </repositories>
-  <pluginRepositories>
-    <pluginRepository>
-      <id>sonatype.oss.releases</id>
-      <name>Sonatype OSS Releases Repository</name>
-      <url>https://oss.sonatype.org/content/repositories/releases</url>
-    </pluginRepository>
-  </pluginRepositories>
   <dependencyManagement>
     <dependencies>
       <!-- Override dependency resolver with test version. This must go *BEFORE*
