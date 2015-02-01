@@ -23,9 +23,7 @@ import com.google.gson.GsonBuilder;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.ejb.Lock;
-import javax.ejb.LockType;
-import javax.ejb.Singleton;
+import javax.ejb.*;
 import javax.websocket.Session;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -42,6 +40,12 @@ public class ConnectionsService {
     @Lock(LockType.WRITE)
     public void addSession(Session session) {
         sessions.add(session);
+    }
+
+    @Schedule(second = "*/20", minute = "*", hour = "*", persistent = false)
+    @Lock(LockType.READ)
+    public void pingClients() {
+        sendToAll("ping", "ping from server");
     }
 
     @Lock(LockType.WRITE)
